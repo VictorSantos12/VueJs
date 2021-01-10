@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+<div id="app">
     <nav class="navbar">
       <div class="links">
        <div class="left">
@@ -15,10 +15,13 @@
          </div> 
        </div>
       <div class="right">    
-        <input
-          type="text"
-          class="search"
-         placeholder="Busca">
+        <form>
+          <input
+          type="search"
+          class="Search"
+          placeholder="Busca">
+          <img src="./assets/magnifiying-glass.png" alt="">
+        </form>
       <div class="User">
          <img
             src="https://icon-icons.com/icons2/2760/PNG/32/profile_icon_176363.png"
@@ -26,9 +29,10 @@
       </div>
     </div>
    </div>
-    
   </nav>
+
    <Menu />
+
     <footer class="footer">
       <div class="fimg">
           <img src="./assets/logo.png" width="200px">
@@ -43,39 +47,47 @@
         <li>
           <a href="#">Ajuda</a>
           </li>
-        <li>© 1996-2021, Amazon.com, Inc. ou suas afiliadas</li>
+          <div>
+            <li>© 1996-2021, Amazon.com, Inc. ou suas afiliadas</li>
+          </div>
       </div>
     </footer>
   </div>
 </template>
 
-<script> 
-import Menu from './components/Menu'
+<script>
+import Menu from './components/Menu';
 
 export default {
   name: 'App',
+
   components: {
-    Menu
+   Menu,
   }
- 
-}
+};
 </script>
 
 <style>
 body {
   padding: 0px;
   margin: 0px;
+  font-family:Arial, Helvetica, sans-serif
+}
+
+#app {
+  display: grid;
+  grid-template-areas: "nav" ;
+  grid-template-rows: 11.5vh;
 }
 
 .navbar {
-  padding: 26px;
+  grid-area: nav;
   background-color: #1e2735;
 }
 .links{
   display: flex;
+  padding: 27px;
   flex-direction: row;
-  align-items: center;
-  padding-left: 20px;
   justify-content: space-between;
 }
 .btn {
@@ -87,7 +99,7 @@ body {
   color: rgb(199, 199, 199);
   background-color: transparent;
 }
-.search {
+.Search {
   padding: 12px;
   font-size: 25px;
   cursor: pointer;
@@ -100,14 +112,12 @@ body {
   font-size: 30px;
   padding: 12px;
   color: rgb(199, 199, 199);
-  font-family:Arial, Helvetica, sans-serif
 }
 .footer {
   font-size: 22px;
   padding: 12px;
   color: rgb(146, 145, 145);
   list-style: none;
-  font-family:Arial, Helvetica, sans-serif
 }
 .left {
   display: flex;
